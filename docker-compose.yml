@@ -8,10 +8,25 @@ services:
         ports:
             - "4444:4444"  
         tty: true
-    selnode:
+    selnode1:
         build:
             context: .
             dockerfile: DockerfileSel-Node
         links:
         - selhost
         tty: true
+    selnode2:
+        build:
+            context: .
+            dockerfile: DockerfileSel-Node
+        links:
+        - selhost
+        tty: true
+    selnode3:
+        build:
+            context: .
+            dockerfile: DockerfileSel-Node
+        links:
+        - selhost
+        tty: true
+
