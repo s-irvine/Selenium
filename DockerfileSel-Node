@@ -4,11 +4,10 @@ MAINTAINER Sam Irvine
 USER root
 RUN apt-get update -y && apt-get install -y wget default-jre default-jdk
 
-WORKDIR /opt/
-RUN wget https://goo.gl/Lyo36k
+ADD https://goo.gl/Lyo36k /opt/selenium-server-standalone-3.0.1.jar
 
 ENV JAVA_HOME /usr/lib/jvm/default-java
 
 #RUN java -jar Lyo36k -role node  -hub http://selhost:4444/grid/register
 
-ENTRYPOINT java -jar Lyo36k -role node  -hub http://selhost:4444/grid/register
+ENTRYPOINT java -jar /opt/selenium-server-standalone-3.0.1.jar -role node  -hub http://selhost:4444/grid/register
