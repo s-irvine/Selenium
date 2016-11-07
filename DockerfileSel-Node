@@ -9,6 +9,6 @@ RUN wget https://goo.gl/Lyo36k
 
 ENV JAVA_HOME /usr/lib/jvm/default-java
 
-RUN java -jar Lyo36k -role node  -hub http://selhost:4444/grid/register
+#RUN java -jar Lyo36k -role node  -hub http://selhost:4444/grid/register
 
-ENTRYPOINT bash
+ENTRYPOINT java -jar Lyo36k -role node  -hub http://selhost:4444/grid/register
