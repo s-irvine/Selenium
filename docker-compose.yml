@@ -8,7 +8,8 @@ services:
         ports:
             - "4444:4444"  
         tty: true
-        volumes: ./Shared:/tmp/Shared
+        volumes:
+        - ./Shared:/tmp/Shared
     selnode1:
         build:
             context: .
