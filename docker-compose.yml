@@ -29,7 +29,7 @@ services:
         links:
         - selhost
         tty: true
-selnode4:
+    selnode4:
         build:
             context: .
             dockerfile: DockerfileSel-Node
