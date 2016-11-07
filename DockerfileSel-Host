@@ -12,4 +12,4 @@ ENV JAVA_HOME /usr/lib/jvm/default-java
 #RUN java -jar Lyo36k -role hub
 #RUN java -jar Lyo36k -role node  -hub http://localhost:4444/grid/register
 
-ENTRYPOINT java -jar Lyo36k -role hub && java -jar Lyo36k -role node  -hub http://localhost:4444/grid/register
+ENTRYPOINT java -jar Lyo36k -role hub
