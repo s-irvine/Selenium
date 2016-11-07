@@ -9,6 +9,6 @@ ADD https://goo.gl/Lyo36k /opt/selenium-server-standalone-3.0.1.jar
 ENV JAVA_HOME /usr/lib/jvm/default-java
 
 #RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role hub
-#RUN java -jar Lyo36k -role node  -hub http://selhost:4444/grid/register
+#RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role node  -hub http://selhost:4444/grid/register
 
 ENTRYPOINT java -jar /opt/selenium-server-standalone-3.0.1.jar -role node  -hub http://selhost:4444/grid/register
