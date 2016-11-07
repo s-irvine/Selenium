@@ -5,7 +5,7 @@ services:
         build:
             context: .
             dockerfile: DockerfileSel-Host
-          ports:
+        ports:
             - "4444:4444"  
         tty: true
     selnode:
