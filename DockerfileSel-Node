@@ -1,0 +1,14 @@
+FROM ubuntu
+MAINTAINER Sam Irvine
+
+USER root
+RUN apt-get update -y && apt-get install -y wget default-jre default-jdk
+
+WORKDIR /opt/
+RUN wget https://goo.gl/Lyo36k
+
+ENV JAVA_HOME /usr/lib/jvm/default-java
+
+RUN java -jar selenium-server-standalone-2.44.0.jar -role node  -hub http://selhost:4444/grid/register
+
+ENTRYPOINT bash
