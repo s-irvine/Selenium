@@ -9,7 +9,8 @@ include RSpec::Matchers
 def setup
   @driver = Selenium::WebDriver.for(
     :remote,
-    url: 'http://172.19.0.3:5555',
+    #url: 'http://172.19.0.3:5555',
+    url: any,
     desired_capabilities: :firefox) # you can also use :chrome, :safari, etc.
 end
 
