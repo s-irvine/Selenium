@@ -17,24 +17,24 @@ services:
         links:
         - selhost
         tty: true
-    selnode2:
-        build:
-            context: .
-            dockerfile: DockerfileSel-Node
-        links:
-        - selhost
-        tty: true
-    selnode3:
-        build:
-            context: .
-            dockerfile: DockerfileSel-Node
-        links:
-        - selhost
-        tty: true
-    selnode4:
-        build:
-            context: .
-            dockerfile: DockerfileSel-Node
-        links:
-        - selhost
-        tty: true
+ #   selnode2:
+ #       build:
+ #           context: .
+ #           dockerfile: DockerfileSel-Node
+ #       links:
+ #       - selhost
+ #       tty: true
+ #   selnode3:
+ #       build:
+ #           context: .
+ #           dockerfile: DockerfileSel-Node
+ #       links:
+ #       - selhost
+ #       tty: true
+ #   selnode4:
+ #       build:
+ #           context: .
+ #           dockerfile: DockerfileSel-Node
+ #       links:
+ #       - selhost
+ #       tty: true
