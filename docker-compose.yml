@@ -10,6 +10,10 @@ services:
         tty: true
         volumes:
         - ./Shared:/tmp/Shared
+        environment:
+        - GRID_BROWSER_TIMEOUT=300000
+        - GRID_TIMEOUT=300000
+        - SE_OPTS=-browserTimeout 100-timeout 100
     sel-node-1:
         build:
             context: .
