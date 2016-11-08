@@ -1,10 +1,7 @@
 require 'rubygems'
 require 'selenium-webdriver'
 
-driver = Selenium::WebDriver.for(
-    :remote,
-    url: 'http://172.19.0.3:5555/wd/hub',
-    desired_capabilities: :firefox)
+driver = Selenium::WebDriver.for(:remote,url: 'http://172.19.0.3:5555/wd/hub',desired_capabilities: :firefox)
 driver.get "http://google.com"
 
 element = driver.find_element :name => "q"
