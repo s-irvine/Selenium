@@ -15,26 +15,26 @@ services:
             context: .
             dockerfile: DockerfileSel-Node
         links:
-        - selhost
+        - sel-host
         tty: true
  #   sel-node-2:
  #       build:
  #           context: .
  #           dockerfile: DockerfileSel-Node
  #       links:
- #       - selhost
+ #       - sel-host
  #       tty: true
  #   sel-node-3:
  #       build:
  #           context: .
  #           dockerfile: DockerfileSel-Node
  #       links:
- #       - selhost
+ #       - sel-host
  #       tty: true
  #   sel-node-4:
  #       build:
  #           context: .
  #           dockerfile: DockerfileSel-Node
  #       links:
- #       - selhost
+ #       - sel-host
  #       tty: true
