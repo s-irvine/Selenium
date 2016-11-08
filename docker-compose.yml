@@ -16,6 +16,8 @@ services:
             dockerfile: DockerfileSel-Node
         links:
         - sel-host
+        volumes:
+        - /dev/shm:/dev/shm
         tty: true
  #   sel-node-2:
  #       build:
