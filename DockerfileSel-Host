@@ -18,4 +18,4 @@ ENV JAVA_HOME /usr/lib/jvm/default-java
 RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role hub &
 
 
-ENTRYPOINT bash
+ENTRYPOINT java -jar /opt/selenium-server-standalone-3.0.1.jar -role hub
