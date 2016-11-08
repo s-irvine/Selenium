@@ -2,14 +2,15 @@ FROM ubuntu
 MAINTAINER Sam Irvine
 
 USER root
-RUN apt-get update -y && apt-get install -y default-jdk unzip ruby ruby-dev2.2
+RUN apt-get update -y && apt-get install -y default-jdk unzip ruby ruby-dev make gcc
 
 ADD https://goo.gl/Lyo36k /opt/selenium-server-standalone-3.0.1.jar
 RUN mkdir /opt/sel-java
 ADD http://selenium-release.storage.googleapis.com/3.0/selenium-java-3.0.1.zip /opt/sel-java
 RUN unzip /opt/sel-java/selenium-java-3.0.1.zip -d /opt/sel-java
-RUN mkdir /opt/sel-ruby
-ADD http://rubygems.org/gems/selenium-webdriver /opt/sel-ruby
+#RUN mkdir /opt/sel-ruby
+#ADD http://rubygems.org/gems/selenium-webdriver /opt/sel-ruby
+RUN gem update --system
 RUN gem install selenium-webdriver
 
 ENV JAVA_HOME /usr/lib/jvm/default-java
