@@ -14,7 +14,8 @@ RUN gem update --system
 RUN gem install rspec
 RUN gem install selenium-webdriver
 
-ENV JAVA_HOME /usr/lib/jvm/default-java
+#ENV JAVA_HOME /usr/lib/jvm/default-java
+ENV PATH ${PATH}:/usr/lib/jvm/default-java:/opt/geckodriver
 
 #RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role hub
 #RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role node  -hub http://localhost:4444/grid/register
