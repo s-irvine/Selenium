@@ -5,10 +5,17 @@ USER root
 RUN apt-get update -y && apt-get install -y default-jdk
 
 ADD https://goo.gl/Lyo36k /opt/selenium-server-standalone-3.0.1.jar
+RUN mkdir /opt/sel-java
+ADD http://selenium-release.storage.googleapis.com/3.0/selenium-java-3.0.1.zip /opt/sel-java
+RUN mkdir /opt/sel-ruby
+ADD http://rubygems.org/gems/selenium-webdriver /opt/sel-ruby
 
 ENV JAVA_HOME /usr/lib/jvm/default-java
 
 #RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role hub
 #RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role node  -hub http://localhost:4444/grid/register
 
-ENTRYPOINT java -jar /opt/selenium-server-standalone-3.0.1.jar -role hub
+RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role hub &
+
+
+ENTRYPOINT bash
