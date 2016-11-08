@@ -7,7 +7,6 @@ def setup
     :remote,
     #url: 'http://172.19.0.3:5555',
     desired_capabilities: :firefox) # you can also use :chrome, :safari, etc.
-  @driver.manage.timeouts.page_load = 300
 end
 
 def teardown
@@ -21,6 +20,7 @@ def run
 end
 
 run do
+  @driver.manage.timeouts.page_load = 300
   @driver.get 'http://the-internet.herokuapp.com'
   expect(@driver.title).to eq('The Internet')
 end
