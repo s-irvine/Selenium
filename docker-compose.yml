@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-    selhost:
+    sel-host:
         build:
             context: .
             dockerfile: DockerfileSel-Host
@@ -10,28 +10,28 @@ services:
         tty: true
         volumes:
         - ./Shared:/tmp/Shared
-    selnode1:
+    sel-node-1:
         build:
             context: .
             dockerfile: DockerfileSel-Node
         links:
         - selhost
         tty: true
- #   selnode2:
+ #   sel-node-2:
  #       build:
  #           context: .
  #           dockerfile: DockerfileSel-Node
  #       links:
  #       - selhost
  #       tty: true
- #   selnode3:
+ #   sel-node-3:
  #       build:
  #           context: .
  #           dockerfile: DockerfileSel-Node
  #       links:
  #       - selhost
  #       tty: true
- #   selnode4:
+ #   sel-node-4:
  #       build:
  #           context: .
  #           dockerfile: DockerfileSel-Node
