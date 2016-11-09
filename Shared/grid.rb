@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'selenium-webdriver'
-require 'rspec/retry'
+require 'rspec'
 
 RSpec.configure do |config|
   # show retry status in spec process
