@@ -8,7 +8,8 @@ driver.get "https://github.com/s-irvine/Selenium"
 
 puts "Page title is #{driver.title}"
 
-element = driver.find_element(:xpath, '//*[@id="js-repo-pjax-container"]/div[2]/div[1]/div[5]/div[2]/form/button')
+#element = driver.find_element(:xpath, '//*[@id="js-repo-pjax-container"]/div[2]/div[1]/div[5]/div[2]/form/button')
+element = driver.find_element(:class, "btn btn-sm BtnGroup-item")
 element.click
 #driver.find_element(:id, "Create new file").click 
 
