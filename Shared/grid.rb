@@ -1,10 +1,10 @@
 require 'rubygems'
 require 'selenium-webdriver'
-require 'rspec'
+require 'rspec/retry'
 
 RSpec.configure do |config|
   # show retry status in spec process
-  config.verbose_retry = true
+  #config.verbose_retry = true
   # Try twice (retry once)
   config.default_retry_count = 5
   # Only retry when Selenium raises Net::ReadTimeout
