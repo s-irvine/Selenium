@@ -8,7 +8,7 @@ driver.get "https://github.com/s-irvine/Selenium"
 puts "Page title is #{driver.title}"
 
 #driver.find_element(:xpath, "//*[@id='js-repo-pjax-container']/div[2]/div[1]/div[5]/div[2]/form/button").click
-driver.find_element(:css, "Create new file").click
+driver.find_element(:id, "Create new file").click
 
 wait = Selenium::WebDriver::Wait.new(:timeout => 10)
 wait.until { driver.title.downcase.start_with? "new" }
