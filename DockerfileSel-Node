@@ -3,7 +3,7 @@ MAINTAINER Sam Irvine
 
 USER root
 
-RUN apt-get uptdate -y
+RUN apt-get update -y
 
 RUN apt-add-repository ppa:mozillateam/firefox-next
 
