@@ -2,16 +2,20 @@ require 'rubygems'
 require 'selenium-webdriver'
 
 driver = Selenium::WebDriver.for(:remote,url: 'http://52.213.84.182:4444/wd/hub',desired_capabilities: :firefox)
-driver.get "http://google.com"
 
-element = driver.find_element :name => "q"
-element.send_keys "QA Consulting"
-element.submit
+for i in 0..5
+   driver.get "http://google.com"
+  
+   puts "Iteration number is #{i}"
+   element = driver.find_element :name => "q"
+   element.send_keys "QA Consulting" 
+   element.submit
 
-puts "Page title is #{driver.title}"
+   puts "Page title is #{driver.title}"
+  
+   wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+   wait.until { driver.title.downcase.start_with? "qa" }
 
-wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-wait.until { driver.title.downcase.start_with? "qa" }
-
-puts "Page title is #{driver.title}"
-driver.quit
+   puts "Page title is #{driver.title}"
+   driver.quit
+end
