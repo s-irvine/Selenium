@@ -17,5 +17,5 @@ for i in 0..5
    wait.until { driver.title.downcase.start_with? "qa" }
 
    puts "Page title is #{driver.title}"
-   driver.quit
 end
+driver.quit
