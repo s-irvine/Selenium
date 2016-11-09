@@ -1,8 +1,6 @@
 FROM ubuntu
 MAINTAINER Sam Irvine
 
-USER root
-
 RUN apt-get update -y && apt-get install -y default-jdk firefox tar xvfb
 
 ADD https://goo.gl/Lyo36k /opt/selenium-server-standalone-3.0.1.jar
