@@ -17,6 +17,6 @@ ENV PATH ${PATH}:/usr/lib/jvm/default-java:/opt/geckodriver
 #RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role hub
 #RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role node  -hub http://sel-host:4444/grid/register
 
-RUN export DISPLAY=:1
+#RUN export DISPLAY=:1
 
-ENTRYPOINT Xvfb :1 -ac & java -jar /opt/selenium-server-standalone-3.0.1.jar -role node  -hub http://sel-host:4444/grid/register -browser browserName=firefox,maxInstances=5
+ENTRYPOINT export DISPLAY=:1 && Xvfb :1 -ac & java -jar /opt/selenium-server-standalone-3.0.1.jar -role node  -hub http://sel-host:4444/grid/register -browser browserName=firefox,maxInstances=5
