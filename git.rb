@@ -15,7 +15,7 @@ wait.until { driver.title.downcase.start_with? "new" }
 
 puts "Page title is #{driver.title}"
 
-element = driver.find_elements(:xpath, "//*[@id="js-repo-pjax-container"]/div[2]/div[1]/div/form[2]/div[2]/input[1]").map(&:text)  
+element = driver.find_elements(:xpath, "//*[@id='js-repo-pjax-container']/div[2]/div[1]/div/form[2]/div[2]/input[1]").map(&:text)  
 element.send_keys "test" 
 
 element = driver.find_elements(:xpath, "//*[@id='submit-file']").map(&:text)
