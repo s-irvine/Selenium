@@ -2,7 +2,7 @@ require 'rubygems'
 require 'selenium-webdriver'
 
 driver = Selenium::WebDriver.for(:remote,url: 'http://52.213.84.182:4444/wd/hub',desired_capabilities: :firefox)
-driver.manage.timeouts.implicit_wait = 5
+driver.manage.timeouts.implicit_wait = 20
 
 driver.get "https://github.com/s-irvine/Selenium"
 
