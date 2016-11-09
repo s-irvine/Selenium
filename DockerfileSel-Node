@@ -13,4 +13,4 @@ ENV PATH ${PATH}:/usr/lib/jvm/default-java:/opt/geckodriver
 ENTRYPOINT Xvfb :1 -ac &\
            export DISPLAY=:1 &&\
            java -jar /opt/selenium-server-standalone-3.0.1.jar -role node  -hub http://hub:4444/grid/register\
-           -browser browserName=firefox,maxInstances=5
+           -browser browserName=firefox,maxInstances=1
