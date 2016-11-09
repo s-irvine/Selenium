@@ -9,8 +9,8 @@ driver.get "https://github.com/s-irvine/Selenium"
 puts "Page title is #{driver.title}"
 
 #element = driver.find_element(:xpath, '//*[@id="js-repo-pjax-container"]/div[2]/div[1]/div[5]/div[2]/form/button')
-element = driver.find_element(:class, 'btn btn-sm BtnGroup-item')
-element.click
+element = driver.find_elements(:class, 'btn btn-sm BtnGroup-item')
+element[0].click
 #driver.find_element(:id, "Create new file").click 
 
 wait = Selenium::WebDriver::Wait.new(:timeout => 10)
