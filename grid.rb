@@ -4,7 +4,7 @@ require 'selenium-webdriver'
 driver = Selenium::WebDriver.for(:remote,url: 'http://52.213.84.182:4444/wd/hub',desired_capabilities: :firefox)
 
 for i in 0..5
-   puts "Iteration number is #{i}"
+   puts "Iteration number #{i}"
    
    driver.get "http://google.com"
      
