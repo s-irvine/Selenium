@@ -2,7 +2,9 @@ FROM ubuntu
 MAINTAINER Sam Irvine
 
 USER root
-RUN apt-get update -y && apt-get install -y default-jdk firefox tar
+RUN apt-get update -y && apt-get install -y default-jdk firefox tar xvfb
+
+
 
 ADD https://goo.gl/Lyo36k /opt/selenium-server-standalone-3.0.1.jar
 RUN mkdir /opt/geckodriver
@@ -15,4 +17,4 @@ ENV PATH ${PATH}:/usr/lib/jvm/default-java:/opt/geckodriver
 #RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role hub
 #RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role node  -hub http://sel-host:4444/grid/register
 
-ENTRYPOINT java -jar /opt/selenium-server-standalone-3.0.1.jar -role node  -hub http://sel-host:4444/grid/register -browser browserName=firefox,maxInstances=5
+ENTRYPOINT java -jar /opt/selenium-server-standalone-3.0.1.jar -role node  -hub http://sel-host:4444/grid/register -browser browserName=firefox,maxInstances=5 && RUN Xvfb :10 -ac & export DISPLAY=:10
