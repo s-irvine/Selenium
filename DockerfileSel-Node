@@ -2,6 +2,9 @@ FROM ubuntu
 MAINTAINER Sam Irvine
 
 USER root
+
+RUN apt-add-repository ppa:mozillateam/firefox-next
+
 RUN apt-get update -y && apt-get install -y default-jdk firefox tar xvfb
 
 
