@@ -4,9 +4,10 @@ require 'selenium-webdriver'
 driver = Selenium::WebDriver.for(:remote,url: 'http://52.213.84.182:4444/wd/hub',desired_capabilities: :firefox)
 
 for i in 0..5
-   driver.get "http://google.com"
-  
    puts "Iteration number is #{i}"
+   
+   driver.get "http://google.com"
+     
    element = driver.find_element :name => "q"
    element.send_keys "QA Consulting" 
    element.submit
