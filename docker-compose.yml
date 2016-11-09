@@ -1,46 +1,46 @@
 version: '2'
 
 services:
-    sel-host:
+    sel-hub:
         build:
             context: .
-            dockerfile: DockerfileSel-Host
+            dockerfile: DockerfileSel-Hub
         ports:
             - "4444:4444"  
         tty: true
-        volumes:
-        - ./Shared:/tmp/Shared
-        environment:
-        - GRID_BROWSER_TIMEOUT=300000
-        - GRID_TIMEOUT=300000
-        - SE_OPTS=-browserTimeout 100-timeout 100
+#        volumes:
+#        - ./Shared:/tmp/Shared
+#        environment:
+#        - GRID_BROWSER_TIMEOUT=300000
+#        - GRID_TIMEOUT=300000
+#        - SE_OPTS=-browserTimeout 100-timeout 100
     sel-node-1:
         build:
             context: .
             dockerfile: DockerfileSel-Node
         links:
-        - sel-host
-        volumes:
-        - /dev/shm:/dev/shm
+        - sel-hub:hub
+#        volumes:
+#        - /dev/shm:/dev/shm
         tty: true
  #   sel-node-2:
  #       build:
  #           context: .
  #           dockerfile: DockerfileSel-Node
  #       links:
- #       - sel-host
+ #       - sel-hub:hub
  #       tty: true
  #   sel-node-3:
  #       build:
  #           context: .
  #           dockerfile: DockerfileSel-Node
  #       links:
- #       - sel-host
+ #       - sel-hub:hub
  #       tty: true
  #   sel-node-4:
  #       build:
  #           context: .
  #           dockerfile: DockerfileSel-Node
  #       links:
- #       - sel-host
+ #       - sel-hub:hub
  #       tty: true
