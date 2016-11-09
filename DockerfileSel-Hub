@@ -14,7 +14,4 @@ RUN gem install selenium-webdriver
 
 ENV JAVA_HOME /usr/lib/jvm/default-java
 
-#RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role hub
-#RUN java -jar /opt/selenium-server-standalone-3.0.1.jar -role node  -hub http://localhost:4444/grid/register
-
 ENTRYPOINT java -jar /opt/selenium-server-standalone-3.0.1.jar -role hub
