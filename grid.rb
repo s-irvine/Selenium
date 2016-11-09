@@ -9,7 +9,7 @@ for i in 0..5
    driver.get "http://google.com"
      
    element = driver.find_element :name => "q"
-   element.send_keys "QA Consulting" 
+   element.send_keys "QA Consulting #{i}" 
    element.submit
 
    puts "Page title is #{driver.title}"
