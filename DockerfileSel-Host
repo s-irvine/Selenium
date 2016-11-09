@@ -10,7 +10,7 @@ ADD http://selenium-release.storage.googleapis.com/3.0/selenium-java-3.0.1.zip /
 RUN unzip /opt/sel-java/selenium-java-3.0.1.zip -d /opt/sel-java
 
 RUN gem update --system
-RUN gem install rspec
+RUN gem install rspec-retry
 RUN gem install selenium-webdriver
 
 ENV JAVA_HOME /usr/lib/jvm/default-java
