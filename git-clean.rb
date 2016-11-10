@@ -4,30 +4,30 @@ require 'selenium-webdriver'
 user = "s-irvine"
 pass = "Ripcurl12"
 
-driver = Selenium::WebDriver.for(:remote,url: 'http://52.48.17.19:4444//wd/hub',desired_capabilities: :firefox)
-driver.manage.timeouts.implicit_wait = 10
-
-driver.get "https://github.com/s-irvine/Selenium"
-
-puts "Page title is #{driver.title}"
-
-driver.find_element(:xpath, "/html/body/header/div/div/div/a[2]").click
-
-wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-wait.until { driver.title.downcase.start_with? "sign" }
-
-puts "Page title is #{driver.title}"
-
-driver.find_element(:id, "login_field").send_keys "#{user}"
-driver.find_element(:id, "password").send_keys "#{pass}"
-driver.find_element(:xpath, '//*[@id="login"]/form/div[4]/input[3]').click  
-
-wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-wait.until { driver.title.downcase.start_with? "s-irvine" }
-
-puts "Page title is #{driver.title}"
-
 for i in 1..3
+  driver = Selenium::WebDriver.for(:remote,url: 'http://52.48.17.19:4444//wd/hub',desired_capabilities: :firefox)
+  driver.manage.timeouts.implicit_wait = 10
+
+  driver.get "https://github.com/s-irvine/Selenium"
+
+  puts "Page title is #{driver.title}"
+
+  driver.find_element(:xpath, "/html/body/header/div/div/div/a[2]").click
+
+  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  wait.until { driver.title.downcase.start_with? "sign" }
+
+  puts "Page title is #{driver.title}"
+
+  driver.find_element(:id, "login_field").send_keys "#{user}"
+  driver.find_element(:id, "password").send_keys "#{pass}"
+  driver.find_element(:xpath, '//*[@id="login"]/form/div[4]/input[3]').click  
+
+  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  wait.until { driver.title.downcase.start_with? "s-irvine" }
+
+  puts "Page title is #{driver.title}"
+
   puts "Iteration number #{i}"
   
   driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
@@ -50,8 +50,10 @@ for i in 1..3
   wait.until { driver.title.downcase.start_with? "s-irvine" }
 
   puts "Page title is #{driver.title}"
+  
+  driver.quit
 end
 
-driver.quit
+
 
 puts "Cleanup has finished"
