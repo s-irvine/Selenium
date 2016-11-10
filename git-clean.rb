@@ -60,10 +60,13 @@ for i in 1..3
   
   #sleep(10)
   
+  puts "Page title is #{driver.title}"
+  
   l=0
+  
   until  driver.title.downcase.start_with? "s-irvine" 
-    puts "Page title is #{driver.title}"
-   sleep 0.5
+    driver.find_element(:id, "submit-file").click
+    sleep 0.5
     l= l+1
     
   end
