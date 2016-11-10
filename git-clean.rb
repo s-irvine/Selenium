@@ -34,12 +34,17 @@ for i in 1..3
   
   puts "Page title is #{driver.title}" 
   
+  k = 0
+  
   until driver.title.start_with? "Selenium/Test - #{i} at master"
     
     driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
-    sleep 1
+    sleep 0.5
+    k= k+1
     
   end
+  
+  puts "Took needed to try #{k} time(s) to select the file"
   
   #wait = Selenium::WebDriver::Wait.new(:timeout => 15)
   #wait.until {driver.title.start_with? "Selenium/Test - #{i} at master"}
@@ -54,13 +59,17 @@ for i in 1..3
   wait.until { driver.title.downcase.start_with? "deleting" }
   
   #sleep(10)
+  until  driver.title.downcase.start_with? "s-irvine" 
+    puts "Page title is #{driver.title}"
+   sleep 0.5
+    k= k+1
+    
+  end
   
-  puts "Page title is #{driver.title}"
+  puts "Took needed to try #{k} time(s) to delete the file"
   
-  driver.find_element(:id, "submit-file").click
-  
-  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-  wait.until { driver.title.downcase.start_with? "s-irvine" }
+  #wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  #wait.until { driver.title.downcase.start_with? "s-irvine" }
 
   #sleep(10)
   
