@@ -14,8 +14,10 @@ for i in 1..3
 
   driver.find_element(:xpath, "/html/body/header/div/div/div/a[2]").click
 
-  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-  wait.until { driver.title.downcase.start_with? "sign" }
+  #wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  #wait.until { driver.title.downcase.start_with? "sign" }
+  
+  sleep(10)
 
   puts "Page title is #{driver.title}"
   
@@ -23,8 +25,10 @@ for i in 1..3
   driver.find_element(:id, "password").send_keys "#{pass}"
   driver.find_element(:xpath, '//*[@id="login"]/form/div[4]/input[3]').click  
 
-  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-  wait.until { driver.title.downcase.start_with? "s-irvine" }
+  #wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  #wait.until { driver.title.downcase.start_with? "s-irvine" }
+  
+  sleep(10)
 
   puts "Page title is #{driver.title}"
   
@@ -32,8 +36,10 @@ for i in 1..3
 
   driver.find_element(:xpath, '//*[@id="js-repo-pjax-container"]/div[2]/div[1]/div[5]/div[2]/form/button').click
 
-  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-  wait.until { driver.title.downcase.start_with? "new" }
+  #wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  #wait.until { driver.title.downcase.start_with? "new" }
+  
+  sleep(10)
 
   puts "Page title is #{driver.title}"
 
@@ -42,8 +48,10 @@ for i in 1..3
 
   driver.find_element(:id, "submit-file").click
   
-  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-  wait.until { driver.title.downcase.start_with? "s-irvine" }
+  #wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  #wait.until { driver.title.downcase.start_with? "s-irvine" }
+  
+  sleep(10)
 
   puts "Page title is #{driver.title}"
   
