@@ -43,7 +43,7 @@ element.send_keys "Test"
 element.submit
 
 wait = Selenium::WebDriver::Wait.new(:timeout => 30)
-wait.until { driver.find_element(:id, "submit-file").displayed? }
+wait.until { driver.find_element(:id, "submit-file").enabled? }
 
 driver.find_element(:id, "submit-file").click
 
