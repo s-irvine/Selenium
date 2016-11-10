@@ -1,3 +1,5 @@
+#WORKS INTERMITTENTLY
+
 require 'rubygems'
 require 'selenium-webdriver'
 
