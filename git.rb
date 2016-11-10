@@ -5,7 +5,6 @@ user = "s-irvine"
 pass = "Ripcurl12"
 
 for i in 1..3
-
   driver = Selenium::WebDriver.for(:remote,url: 'http://52.48.17.19:4444//wd/hub',desired_capabilities: :firefox)
   driver.manage.timeouts.implicit_wait = 10
 
@@ -49,7 +48,6 @@ for i in 1..3
   puts "Page title is #{driver.title}"
   
   driver.quit
-
 end
   
 puts "Test has completed!" 
