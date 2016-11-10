@@ -20,7 +20,7 @@ puts "Page title is #{driver.title}"
 
 driver.find_element(:id, "login_field").send_keys "#{user}"
 driver.find_element(:id, "password").send_keys "#{pass}"
-driver.find_element(:xpath, "//*[@id="login"]/form/div[4]/input[3]").click  
+driver.find_element(:xpath, '//*[@id="login"]/form/div[4]/input[3]').click  
 
 wait = Selenium::WebDriver::Wait.new(:timeout => 10)
 wait.until { driver.title.downcase.start_with? "s-irvine" }
