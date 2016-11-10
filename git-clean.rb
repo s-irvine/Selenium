@@ -5,6 +5,8 @@ user = "s-irvine"
 pass = "Ripcurl12"
 
 for i in 1..3
+  puts "Iteration number #{i}"
+  
   driver = Selenium::WebDriver.for(:remote,url: 'http://52.48.17.19:4444//wd/hub',desired_capabilities: :firefox)
   driver.manage.timeouts.implicit_wait = 10
 
@@ -30,16 +32,19 @@ for i in 1..3
 
   #sleep(10)
   
-  puts "Page title is #{driver.title}"
-
-  puts "Iteration number #{i}"
+  puts "Page title is #{driver.title}" 
   
-  driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
+  until {driver.title.start_with? "Selenium/Test - #{i} at master"}
+    
+    driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
+    sleep 1
+    
+  end
   
   #wait = Selenium::WebDriver::Wait.new(:timeout => 15)
   #wait.until {driver.title.start_with? "Selenium/Test - #{i} at master"}
   
-  sleep(5)
+  #sleep(5)
   
   puts "Page title is #{driver.title}"
   
@@ -63,7 +68,5 @@ for i in 1..3
   
   driver.quit
 end
-
-
 
 puts "Cleanup has finished"
