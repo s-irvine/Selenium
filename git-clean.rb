@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'selenium-webdriver'
 
+start = Time.now
+
 user = "s-irvine"
 pass = "Ripcurl12"
 
@@ -34,20 +36,20 @@ for i in 1..3
   
   puts "Page title is #{driver.title}" 
   
-  k = 0
+  #k = 0
   
-  until driver.title.start_with? "Selenium/Test - #{i} at master"
+  #until driver.title.start_with? "Selenium/Test - #{i} at master"
     
     driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
-    sleep 0.5
-    k= k+1
+    #sleep 0.5
+    #k= k+1
     
-  end
+  #end
   
-  puts "Took needed to try #{k} time(s) to select the file"
+  #puts "Took needed to try #{k} time(s) to select the file"
   
-  #wait = Selenium::WebDriver::Wait.new(:timeout => 15)
-  #wait.until {driver.title.start_with? "Selenium/Test - #{i} at master"}
+  wait = Selenium::WebDriver::Wait.new(:timeout => 15)
+  wait.until {driver.title.start_with? "Selenium/Test - #{i} at master"}
   
   #sleep(5)
   
@@ -62,20 +64,20 @@ for i in 1..3
   
   puts "Page title is #{driver.title}"
   
-  l=0
+  #l=0
   
-  until  driver.title.downcase.start_with? "s-irvine" 
+  #until  driver.title.downcase.start_with? "s-irvine" 
     
     driver.find_element(:id, "submit-file").click
-    sleep 0.5
-    l= l+1
+    #sleep 0.5
+    #l= l+1
     
-  end
+  #end
   
-  puts "Took needed to try #{l} time(s) to delete the file"
+  #puts "Took needed to try #{l} time(s) to delete the file"
   
-  #wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-  #wait.until { driver.title.downcase.start_with? "s-irvine" }
+  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  wait.until { driver.title.downcase.start_with? "s-irvine" }
 
   #sleep(10)
   
@@ -84,4 +86,6 @@ for i in 1..3
   driver.quit
 end
 
-puts "Cleanup has finished"
+fin = Time.now
+run = fin - start
+puts "Cleanup has finished and took #{run} seconds to run"
