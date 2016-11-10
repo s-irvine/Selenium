@@ -65,6 +65,7 @@ for i in 1..3
   l=0
   
   until  driver.title.downcase.start_with? "s-irvine" 
+    
     driver.find_element(:id, "submit-file").click
     sleep 0.5
     l= l+1
