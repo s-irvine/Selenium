@@ -44,7 +44,7 @@ element.submit
 
 m=0
 until driver.title.downcase.start_with? "s-irvine"
-  pause(0.5)
+  sleep(0.5)
   driver.find_element(:id, "submit-file").click
   m = m + 1
 end
