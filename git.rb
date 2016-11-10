@@ -27,7 +27,7 @@ wait.until { driver.title.downcase.start_with? "s-irvine" }
 
 puts "Page title is #{driver.title}"
 
-for i in 1..10
+for i in 1..9
   
   puts "Iteration number: #{i}"
 
