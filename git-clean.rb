@@ -33,16 +33,16 @@ wait.until { driver.title.downcase.start_with? "s-irvine" }
 puts "Page title is #{driver.title}" 
   
 k = 0
-until driver.title.start_with? "Selenium/Test - #{i} at master"
+until driver.title.start_with? "Selenium/Test at master"
   sleep 0.5
-  driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
+  driver.find_element(:xpath, "//*[@title='Test']").click
   k = k + 1
 end
   
 puts "Needed to try #{k} time(s) to select the file"
   
 #wait = Selenium::WebDriver::Wait.new(:timeout => 15)
-#wait.until {driver.title.start_with? "Selenium/Test - #{i} at master"}
+#wait.until {driver.title.start_with? "Selenium/Test at master"}
     
 puts "Page title is #{driver.title}"
   
