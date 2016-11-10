@@ -30,7 +30,7 @@ puts "Page title is #{driver.title}"
 for i in 1..9
   puts "Iteration number #{i}"
   
-  driver.find_element(:xpath, '//*[@title="Test - #{i}"]').click
+  driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
   
   wait = Selenium::WebDriver::Wait.new(:timeout => 10)
   wait.until { driver.title.downcase.start_with? "selenium/test" }
