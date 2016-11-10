@@ -46,11 +46,21 @@ for i in 1..3
   element = driver.find_element(:xpath, "//*[@id='js-repo-pjax-container']/div[2]/div[1]/div/form[2]/div[2]/input[1]") 
   element.send_keys "Test - #{i}" 
   element.submit
-
-  driver.find_element(:id, "submit-file").click
   
-  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-  wait.until { driver.title.downcase.start_with? "s-irvine" }
+  m=0
+  
+  until  driver.title.downcase.start_with? "s-irvine" 
+    
+    driver.find_element(:id, "submit-file").click
+    sleep(0.5)
+    m=m+1
+    
+  end
+  
+  puts "Took #{m} trie(s) to commit the new file"
+  
+  #wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  #wait.until { driver.title.downcase.start_with? "s-irvine" }
   
   #sleep(10)
 
