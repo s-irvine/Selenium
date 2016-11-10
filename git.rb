@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'selenium-webdriver'
 
+start = Time.now
+
 user = "s-irvine"
 pass = "Ripcurl12"
 
@@ -47,20 +49,20 @@ for i in 1..3
   element.send_keys "Test - #{i}" 
   element.submit
   
-  m=0
+  #m=0
   
-  until  driver.title.downcase.start_with? "s-irvine" 
+  #until  driver.title.downcase.start_with? "s-irvine" 
     
     driver.find_element(:id, "submit-file").click
-    sleep(0.5)
-    m=m+1
+    #sleep(0.5)
+    #m=m+1
     
-  end
+  #end
   
-  puts "Needed to try #{m} times(s) to commit the new file"
+  #puts "Needed to try #{m} times(s) to commit the new file"
   
-  #wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-  #wait.until { driver.title.downcase.start_with? "s-irvine" }
+  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  wait.until { driver.title.downcase.start_with? "s-irvine" }
   
   #sleep(10)
 
@@ -68,5 +70,7 @@ for i in 1..3
   
   driver.quit
 end
-  
-puts "Test has completed!" 
+
+fin = Time.now
+run = fin-start
+puts "Test has completed in #{run} seconds!" 
