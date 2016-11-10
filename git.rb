@@ -45,6 +45,7 @@ for i in 1..3
 
   element = driver.find_element(:xpath, "//*[@id='js-repo-pjax-container']/div[2]/div[1]/div/form[2]/div[2]/input[1]") 
   element.send_keys "Test - #{i}" 
+  element.submit
 
   driver.find_element(:id, "submit-file").click
   
