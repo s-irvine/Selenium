@@ -36,7 +36,7 @@ for i in 1..3
   
   puts "Page title is #{driver.title}" 
   
-  #k = 0
+  k = 0
   
   until driver.title.start_with? "Selenium/Test - #{i} at master"
     
@@ -64,7 +64,7 @@ for i in 1..3
   
   puts "Page title is #{driver.title}"
   
-  #l=0
+  l=0
   
   until  driver.title.downcase.start_with? "s-irvine" 
     
