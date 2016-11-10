@@ -27,7 +27,7 @@ wait.until { driver.title.downcase.start_with? "s-irvine" }
 
 puts "Page title is #{driver.title}"
 
-for i in 9..9
+for i in 1..3
   puts "Iteration number #{i}"
   
   driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
