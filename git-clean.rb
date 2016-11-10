@@ -39,11 +39,9 @@ for i in 1..3
   k = 0
   
   until driver.title.start_with? "Selenium/Test - #{i} at master"
-    
-    driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
     sleep 0.5
+    driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
     k = k + 1
-    
   end
   
   puts "Needed to try #{k} time(s) to select the file"
@@ -67,11 +65,9 @@ for i in 1..3
   l=0
   
   until  driver.title.downcase.start_with? "s-irvine" 
-    
-    driver.find_element(:id, "submit-file").click
     sleep 0.5
+    driver.find_element(:id, "submit-file").click
     l = l + 1
-    
   end
   
   puts "Needed to try #{l} time(s) to delete the file"
