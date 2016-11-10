@@ -57,7 +57,7 @@ for i in 1..3
     
   end
   
-  puts "Took #{m} trie(s) to commit the new file"
+  puts "Needed to try #{m} times(s) to commit the new file"
   
   #wait = Selenium::WebDriver::Wait.new(:timeout => 10)
   #wait.until { driver.title.downcase.start_with? "s-irvine" }
