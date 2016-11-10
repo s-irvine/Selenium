@@ -38,10 +38,12 @@ wait.until { driver.title.downcase.start_with? "new" }
   
 puts "Page title is #{driver.title}"
 
+sleep(5)
+
 element = driver.find_element(:xpath, "//*[@id='js-repo-pjax-container']/div[2]/div[1]/div/form[2]/div[2]/input[1]") 
 element.send_keys "Test" 
 #element.submit
-sleep(5)
+
 #wait = Selenium::WebDriver::Wait.new(:timeout => 30)
 #wait.until { driver.find_element(:id, "submit-file").enabled? }
 
