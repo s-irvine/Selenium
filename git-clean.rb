@@ -42,7 +42,7 @@ for i in 1..3
     
     driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
     sleep 0.5
-    k= k+1
+    k = k + 1
     
   end
   
@@ -70,7 +70,7 @@ for i in 1..3
     
     driver.find_element(:id, "submit-file").click
     sleep 0.5
-    l= l+1
+    l = l + 1
     
   end
   
