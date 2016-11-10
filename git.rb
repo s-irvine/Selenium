@@ -47,8 +47,6 @@ wait.until { driver.find_element(:id, "submit-file").enabled? }
 
 driver.find_element(:id, "submit-file").click
 
-puts "Needed #{m} trie(s) to create the new file"
-
 wait = Selenium::WebDriver::Wait.new(:timeout => 10)
 wait.until { driver.title.downcase.start_with? "s-irvine" }
   
