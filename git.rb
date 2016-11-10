@@ -5,6 +5,8 @@ user = "s-irvine"
 pass = "Ripcurl12"
 
 for i in 1..3
+  puts "Iteration number #{i}"
+  
   driver = Selenium::WebDriver.for(:remote,url: 'http://52.48.17.19:4444//wd/hub',desired_capabilities: :firefox)
   driver.manage.timeouts.implicit_wait = 10
 
@@ -32,8 +34,6 @@ for i in 1..3
 
   puts "Page title is #{driver.title}"
   
-  puts "Iteration number: #{i}"
-
   driver.find_element(:xpath, '//*[@id="js-repo-pjax-container"]/div[2]/div[1]/div[5]/div[2]/form/button').click
 
   wait = Selenium::WebDriver::Wait.new(:timeout => 10)
