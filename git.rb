@@ -41,11 +41,18 @@ puts "Page title is #{driver.title}"
 element = driver.find_element(:xpath, "//*[@id='js-repo-pjax-container']/div[2]/div[1]/div/form[2]/div[2]/input[1]") 
 element.send_keys "Test" 
 element.submit
-  
-driver.find_element(:id, "submit-file").click
 
-wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-wait.until { driver.title.downcase.start_with? "s-irvine" }
+m=0
+until driver.title.downcase.start_with? "s-irvine"
+  pause(0.5)
+  driver.find_element(:id, "submit-file").click
+  m = m + 1
+end
+
+puts "Needed #{m} trie(s) to create the new file"
+
+#wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+#wait.until { driver.title.downcase.start_with? "s-irvine" }
   
 puts "Page title is #{driver.title}"
 
