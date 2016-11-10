@@ -34,7 +34,7 @@ for i in 1..3
   
   puts "Page title is #{driver.title}" 
   
-  until {driver.title.start_with? "Selenium/Test - #{i} at master"}
+  until driver.title.start_with? "Selenium/Test - #{i} at master"
     
     driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
     sleep 1
