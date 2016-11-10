@@ -36,10 +36,10 @@ for i in 1..3
   
   driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
   
-  wait = Selenium::WebDriver::Wait.new(:timeout => 15)
-  wait.until {driver.title.start_with? "Selenium/Test - #{i} at master"}
+  #wait = Selenium::WebDriver::Wait.new(:timeout => 15)
+  #wait.until {driver.title.start_with? "Selenium/Test - #{i} at master"}
   
-  #sleep(10)
+  sleep(5)
   
   puts "Page title is #{driver.title}"
   
