@@ -46,7 +46,7 @@ for i in 1..3
     
   end
   
-  puts "Took needed to try #{k} time(s) to select the file"
+  puts "Needed to try #{k} time(s) to select the file"
   
   #wait = Selenium::WebDriver::Wait.new(:timeout => 15)
   #wait.until {driver.title.start_with? "Selenium/Test - #{i} at master"}
@@ -74,7 +74,7 @@ for i in 1..3
     
   end
   
-  puts "Took needed to try #{l} time(s) to delete the file"
+  puts "Needed to try #{l} time(s) to delete the file"
   
   #wait = Selenium::WebDriver::Wait.new(:timeout => 10)
   #wait.until { driver.title.downcase.start_with? "s-irvine" }
