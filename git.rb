@@ -39,7 +39,7 @@ wait.until { driver.title.downcase.start_with? "new" }
 puts "Page title is #{driver.title}"
 
 element = driver.find_element(:xpath, "//*[@id='js-repo-pjax-container']/div[2]/div[1]/div/form[2]/div[2]/input[1]") 
-element.send_keys "Test - #{i}" 
+element.send_keys "Test" 
 element.submit
   
 driver.find_element(:id, "submit-file").click
