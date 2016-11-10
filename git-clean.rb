@@ -35,7 +35,7 @@ for i in 1..9
   #wait = Selenium::WebDriver::Wait.new(:timeout => 10)
   #wait.until { driver.title.downcase.start_with? "Selenium/Test" }
   
-  driver.wait = 10
+  #driver.wait = 10
   
   puts "Page title is #{driver.title}"
   
