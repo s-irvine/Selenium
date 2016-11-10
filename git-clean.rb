@@ -59,14 +59,16 @@ for i in 1..3
   wait.until { driver.title.downcase.start_with? "deleting" }
   
   #sleep(10)
+  
+  l=0
   until  driver.title.downcase.start_with? "s-irvine" 
     puts "Page title is #{driver.title}"
    sleep 0.5
-    k= k+1
+    l= l+1
     
   end
   
-  puts "Took needed to try #{k} time(s) to delete the file"
+  puts "Took needed to try #{l} time(s) to delete the file"
   
   #wait = Selenium::WebDriver::Wait.new(:timeout => 10)
   #wait.until { driver.title.downcase.start_with? "s-irvine" }
