@@ -5,7 +5,7 @@ user = "s-irvine"
 pass = "Ripcurl12"
 
 driver = Selenium::WebDriver.for(:remote,url: 'http://52.48.17.19:4444//wd/hub',desired_capabilities: :firefox)
-driver.manage.timeouts.implicit_wait = 5
+driver.manage.timeouts.implicit_wait = 10
 
 driver.get "https://github.com/s-irvine/Selenium"
 
@@ -27,20 +27,18 @@ wait.until { driver.title.downcase.start_with? "s-irvine" }
 
 puts "Page title is #{driver.title}"
 
-for i in 1..9
+for i in 2..9
   puts "Iteration number #{i}"
   
   driver.find_element(:xpath, "//*[@title='Test - #{i}']").click
   
-  #wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-  #wait.until { driver.title.downcase.start_with? "Selenium/Test" }
-  
-  #driver.wait = 10
+  wait = Selenium::WebDriver::Wait.new(:timeout => 15)
+  wait.until { driver.title.downcase.start_with? "Selenium/Test " }
   
   puts "Page title is #{driver.title}"
   
   driver.find_element(:xpath, '//*[@id="js-repo-pjax-container"]/div[2]/div[1]/div[3]/div[1]/div[1]/form[2]/button').click
-
+  
   wait = Selenium::WebDriver::Wait.new(:timeout => 10)
   wait.until { driver.title.downcase.start_with? "deleting" }
   
