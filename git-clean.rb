@@ -6,7 +6,7 @@ require 'selenium-webdriver'
 start = Time.now
 
 user = "#"
-pass = "#'
+pass = "#"
 
 driver = Selenium::WebDriver.for(:remote,url: 'http://52.48.17.19:4444//wd/hub',desired_capabilities: :firefox)
 driver.manage.timeouts.implicit_wait = 10
