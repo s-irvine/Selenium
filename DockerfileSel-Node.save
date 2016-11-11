@@ -1,0 +1,17 @@
+FROM ubuntu
+MAINTAINER Sam Irvine
+
+RUN apt-get update -y && apt-get install -y default-jdk firefox tar xvfb
+
+ADD https://goo.gl/Lyo36k /opt/selenium-server-standalone-3.0.1.jar
+
+RUN mkdir /opt/geckodriver
+ADD https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz /opt/geckodriver
+RUN tar xzvf /opt/geckodriver/geckodriver-v0.11.1-linux64.tar.gz -C /opt/geckodriver
+
+ENV PATH ${PATH}:/usr/lib/jvm/default-java:/opt/geckodriver
+
+ENTRYPOINT Xvfb :1 -ac &\
+           export DISPLAY=:1 &&\
+           java -jar /opt/selenium-server-standalone-3.0.1.jar -role node\
+                -hub http://hub:4444/grid/register -browser browserName=firefox,maxInstances=5
